@@ -18,6 +18,30 @@ arm_hand_joint_topics = [
     "/darwin/j_gripper_r_position_controller/command",
 ]
 
+squat_joint_topics = [
+    "/darwin/j_thigh1_l_position_controller/command",
+    "/darwin/j_thigh1_r_position_controller/command",
+    "/darwin/j_thigh2_l_position_controller/command",
+    "/darwin/j_thigh2_r_position_controller/command",
+    "/darwin/j_tibia_l_position_controller/command",
+    "/darwin/j_tibia_r_position_controller/command",
+    "/darwin/j_pelvis_l_position_controller/command",
+    "/darwin/j_pelvis_r_position_controller/command"
+]
+
+other_joint_topics = [
+    "/darwin/j_high_arm_l_position_controller/command",
+    "/darwin/j_high_arm_r_position_controller/command",
+    "/darwin/j_low_arm_l_position_controller/command",
+    "/darwin/j_low_arm_r_position_controller/command",
+    "/darwin/j_shoulder_l_position_controller/command",
+    "/darwin/j_shoulder_r_position_controller/command",
+    "/darwin/j_wrist_l_position_controller/command",
+    "/darwin/j_wrist_r_position_controller/command",
+    "/darwin/j_gripper_l_position_controller/command",
+    "/darwin/j_gripper_r_position_controller/command",
+]
+
 def move_joint(joint_topic, position, duration=1.0):
     pub = rospy.Publisher(joint_topic, Float64, queue_size=1)
     start_time = time.time()

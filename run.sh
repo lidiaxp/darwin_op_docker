@@ -14,6 +14,7 @@ if dpkg --get-selections | grep -q "^$NVIDIA_DOCKER_REQUIREMENT[[:space:]]*insta
   GPU_OPTIONS="--gpus all --runtime=nvidia"
 fi
 
+xhost +
 docker run --privileged --rm -it \
            --volume=$XSOCK:$XSOCK:rw \
            --volume=$XAUTH:$XAUTH:rw \
